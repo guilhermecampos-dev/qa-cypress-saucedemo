@@ -34,4 +34,9 @@ it('should login with valid credentials', () =>{
   inventoryPage.validateInventoryPage()
 })
 
+it('should display inventory page after login', () =>{
+  loginPage.login('standard_user','secret_sauce')
+  inventoryPage.validateInventoryPage()
+})
+
 })
