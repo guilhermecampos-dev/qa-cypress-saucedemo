@@ -26,9 +26,21 @@ describe('Inventory Page',() => {
         inventoryPage.validateProductsSortByPriceLowToHigh()
     })
 
+    it('should sort products by price high to low', ()=>{
+        inventoryPage.selectSortOption('hilo')
+
+        inventoryPage.validateProductsSortByPriceHighToLow()
+    })
+
     it('should sort products by name A to Z', ()=>{
         inventoryPage.selectSortOption('az')
         inventoryPage.validateProductsSortedByNameAToZ()
     })
+
+     it('should sort products by name Z to A', ()=>{
+        inventoryPage.selectSortOption('za')
+        inventoryPage.validateProductsSortedByNameZToA()
+    })
+
 
 })

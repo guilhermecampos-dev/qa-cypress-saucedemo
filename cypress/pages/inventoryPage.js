@@ -44,6 +44,19 @@ class InventoryPage{
             expect(prices).to.deep.equal(sortedPrices)
         })
     }
+
+    validateProductsSortByPriceHighToLow(){
+        const prices = []
+
+        this.getProductPrices().each(($price)=>{
+            prices.push(Number($price.text().replace('$','')))
+        }).then(()=>{
+            const sortedPricesDesc = [...prices].sort((a,b)=>b-a)
+
+            expect(prices).to.deep.equal(sortedPricesDesc)
+        })
+    }
+
     
     getProductsNames(){
         return cy.get('.inventory_item_name')
@@ -59,9 +72,17 @@ class InventoryPage{
             expect(names).to.deep.equal(sortedNames)
 
         })
+    }
 
+    validateProductsSortedByNameZToA(){
+        const names = []
 
-        
+        this.getProductsNames().each(($name)=>{
+            names.push($name.text())
+        }).then(()=>{
+            const sortedNamesDown = [...names].sort((a,b)=>b.localeCompare(a))
+            expect(names).to.deep.equal(sortedNamesDown)
+        })
     }
 
     } export default InventoryPage
