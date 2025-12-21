@@ -44,6 +44,25 @@ class InventoryPage{
             expect(prices).to.deep.equal(sortedPrices)
         })
     }
+    
+    getProductsNames(){
+        return cy.get('.inventory_item_name')
+    }
+    
+    validateProductsSortedByNameAToZ(){
+        const names = []
 
-} export default InventoryPage
+        this.getProductsNames().each(($name)=>{
+            names.push($name.text())
+        }).then(()=>{
+            const sortedNames = [...names].sort((a,b)=>a.localeCompare(b))
+            expect(names).to.deep.equal(sortedNames)
+
+        })
+
+
+        
+    }
+
+    } export default InventoryPage
 
