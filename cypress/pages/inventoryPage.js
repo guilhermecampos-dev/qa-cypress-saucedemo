@@ -24,5 +24,26 @@ class InventoryPage{
         })
 
     }
+
+    selectSortOption(option){
+        cy.get('.product_sort_container').select(option)
+    }
+
+    getProductPrices(){
+        return cy.get('.inventory_item_price')
+    }
+
+    validateProductsSortByPriceLowToHigh(){
+        const prices = []
+
+        this.getProductPrices().each(($price)=>{
+            prices.push(Number($price.text().replace('$', '')))
+        }).then(()=>{
+            const sortedPrices = [...prices].sort((a,b)=>a-b)
+
+            expect(prices).to.deep.equal(sortedPrices)
+        })
+    }
+
 } export default InventoryPage
 

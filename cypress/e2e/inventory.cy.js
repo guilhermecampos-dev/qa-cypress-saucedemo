@@ -20,4 +20,10 @@ describe('Inventory Page',() => {
         inventoryPage.validateProductStructure()
     })
 
+    it('should sort products by price low to high', ()=>{
+        inventoryPage.selectSortOption('lohi')
+
+        inventoryPage.validateProductsSortByPriceLowToHigh()
+    })
+
 })
