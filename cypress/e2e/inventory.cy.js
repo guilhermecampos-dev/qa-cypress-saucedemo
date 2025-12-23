@@ -43,4 +43,10 @@ describe('Inventory Page',() => {
     })
 
 
+    it('should update cart badge when adding a product', ()=>{
+        inventoryPage.addProductToCartByName('Sauce Labs Backpack')
+        inventoryPage.validateCartBadge('1')
+    })
+
+
 })

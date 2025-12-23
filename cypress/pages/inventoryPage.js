@@ -85,5 +85,21 @@ class InventoryPage{
         })
     }
 
+    addProductToCartByName(productName){
+        cy.contains('.inventory_item', productName)
+        .find('button')
+        .click()
+    }
+
+    getCartBadges(){
+        return cy.get('.shopping_cart_badge')
+    }
+
+    validateCartBadge(quantity){
+        this.getCartBadges()
+        .should('be.visible')
+        .and('have.text', quantity)
+    }
+
     } export default InventoryPage
 
