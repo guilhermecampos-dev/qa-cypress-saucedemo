@@ -9,7 +9,6 @@ describe('Cart Page', () => {
   const cartPage = new CartPage()
 
   beforeEach(() => {
-    loginPage.visit()
     cy.login()
 
     inventoryPage.addProductToCartByName('Sauce Labs Backpack')
