@@ -1,26 +1,27 @@
-import CartPage from "../pages/cartPage"
-import InventoryPage from "../pages/inventoryPage"
+import LoginPage from '../pages/LoginPage'
+import InventoryPage from '../pages/InventoryPage'
+import CartPage from '../pages/CartPage'
 
-describe('Cart Page', ()=>{
-    const inventoryPage = new InventoryPage()
-    const cartPage = new CartPage()
+describe('Cart Page', () => {
 
-beforeEach(()=>{
+  const loginPage = new LoginPage()
+  const inventoryPage = new InventoryPage()
+  const cartPage = new CartPage()
+
+  beforeEach(() => {
+    loginPage.visit()
     cy.login()
+
     inventoryPage.addProductToCartByName('Sauce Labs Backpack')
-    inventoryPage.validateCartBadge('1')
+    inventoryPage.addProductToCartByName('Sauce Labs Bike Light')
+
     cartPage.visit()
-    cartPage.validateCartPage()
-    cartPage.validateProductsAreDisplayed()
-})
+  })
 
-it('should display cart page correctly',()=>{
+  it('should display cart page correctly', () => {
     cartPage.validateCartPage()
-})
-
-it('should display added products in cart', ()=>{
     cartPage.validateProductsAreDisplayed()
     cartPage.validateProductStructure()
-})
+  })
 
 })
