@@ -28,7 +28,7 @@ class LoginPage {
   }
 
   validateErrorMessage(){
-    cy.get('[data-test="error]"')
+    cy.get('[data-test="error"]')
     .should('be.visible')
     .and('contain', 'Username and password do not match')
   }

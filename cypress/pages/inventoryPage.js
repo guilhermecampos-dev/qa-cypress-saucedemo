@@ -96,10 +96,14 @@ class InventoryPage{
     }
 
     validateCartBadge(quantity){
-        this.getCartBadges()
-        .should('be.visible')
-        .and('have.text', quantity)
-    }
+        if(quantity === '0'){
+            cy.get('.shopping_cart_badge').should('not exist')
+        }else{
+            cy.get('.shopping_cart_badge')
+            .should('be.visible')
+            .and('have.text', quantity)
+        }
+    }    
+
 
     } export default InventoryPage
-
