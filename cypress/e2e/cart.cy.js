@@ -28,6 +28,7 @@ describe('Cart Page', () => {
     cartPage.validateProductsAreDisplayed()
     cartPage.validateProductStructure()
     cartPage.validateCartBadge('2')
+    
   })
 
   it('should remove a product from cart and update badge', () => {
