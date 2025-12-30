@@ -97,7 +97,7 @@ class InventoryPage{
 
     validateCartBadge(quantity){
         if(quantity === '0'){
-            cy.get('.shopping_cart_badge').should('not exist')
+            cy.get('.shopping_cart_badge').should('not.exist')
         }else{
             cy.get('.shopping_cart_badge')
             .should('be.visible')

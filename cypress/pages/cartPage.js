@@ -42,10 +42,19 @@ class CartPage {
     }
 
     // Valida o badge do carrinho (quantidade de itens)
-    validateCartBadge(quantity) {
-        cy.get('.shopping_cart_badge')
+    validateCartBadge(quantity){
+        if(quantity === '0'){
+            cy.get('.shopping_cart_badge').should('not.exist')
+        }else{
+            cy.get('.shopping_cart_badge')
             .should('be.visible')
             .and('have.text', quantity)
+        }
+    }   
+
+    validateProductRemoved(productName){
+        cy.contains('.cart_item', productName)
+        .should('not.exist')
     }
 }
 
