@@ -1,4 +1,4 @@
-🧪 Cypress E2E Automation – SauceDemo
+<h1> 🧪 Cypress E2E Automation – SauceDemo </h1>
 
 End-to-End test automation project built with Cypress, using the demo e-commerce application
 https://www.saucedemo.com
