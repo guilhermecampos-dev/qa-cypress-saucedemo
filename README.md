@@ -6,117 +6,121 @@ https://www.saucedemo.com
 
 The goal of this project is to validate the main purchase flow of an e-commerce, from login to checkout completion, applying best practices in test automation and Page Object Model (POM) architecture.
 
-🚀 Tech Stack
+<h2> 🚀 Tech Stack </h2>
 
-Cypress
+- Cypress
 
-JavaScript
+- JavaScript
 
-Node.js
+- Node.js
 
-Page Object Model (POM)
+- Page Object Model (POM)
 
-📂 Project Structure
-cypress/
-├── e2e/
-│   ├── loginPage.cy.js
-│   ├── inventory.cy.js
-│   ├── cart.cy.js
-│   ├── checkout.cy.js
-│   ├── checkoutOverview.cy.js
-│   └── checkoutComplete.cy.js
-│
-├── pages/
-│   ├── loginPage.js
-│   ├── inventoryPage.js
-│   ├── cartPage.js
-│   ├── checkoutPage.js
-│   ├── checkoutOverviewPage.js
-│   └── checkoutCompletePage.js
-│
-├── support/
-│   └── commands.js
+<h2>📂 Project Structure</h2>
 
-🧠 Design Pattern
+cypress/<br>
+├── e2e/<br>
+│   ├── loginPage.cy.js<br>
+│   ├── inventory.cy.js<br>
+│   ├── cart.cy.js<br>
+│   ├── checkout.cy.js<br>
+│   ├── checkoutError.cy.js<br>
+│   ├── checkoutOverview.cy.js<br>
+│   └── checkoutComplete.cy.js<br>
+│<br>
+├── pages/<br>
+│   ├── loginPage.js<br>
+│   ├── inventoryPage.js<br>
+│   ├── cartPage.js<br>
+│   ├── checkoutPage.js<br>
+│   ├── checkoutOverviewPage.js<br>
+│   └── checkoutCompletePage.js<br>
+│<br>
+├── support/<br>
+│   ├── commands.js<br>
+│   └── e2e.js<br>
+<br>
+<br>
+<h2>🧠 Design Pattern</h2>
 
 This project uses Page Object Model (POM) to:
 
-Separate test logic from UI interaction logic
+- Separate test logic from UI interaction logic
 
-Improve test readability
+- Improve test readability
 
-Increase maintainability
+- Increase maintainability
 
-Promote code reuse
+- Promote code reuse
 
-🧪 Automated Test Scenarios
-🔐 Login
+<h2>🧪 Automated Test Scenarios</h2>
+<h3>🔐 Login</h3>
 
-Login with valid credentials
+- Login with valid credentials
 
-Error validation with invalid credentials
+- Error validation with invalid credentials
 
-📦 Inventory
+<h3>📦 Inventory</h3>
 
-Inventory page validation
+- Inventory page validation
 
-Product list validation
+- Product list validation
 
-Product structure validation
+- Product structure validation
 
-Sorting validation:
+- Sorting validation:
 
-Name (A → Z / Z → A)
+  - Name (A → Z / Z → A)
 
-Price (Low → High / High → Low)
+  - Price (Low → High / High → Low)
 
-🛒 Cart
+<h3>🛒 Cart</h3>
 
-Add products to cart
+- Add products to cart
 
-Validate cart badge quantity
+- Validate cart badge quantity
 
-Remove products from cart
+- Remove products from cart
 
-Validate cart updates correctly
+- Validate cart updates correctly
 
-💳 Checkout
+<h3>💳 Checkout</h3>
 
-Step One (Your Information)
+- Step One (Your Information)
 
-Required fields validation
+- Required fields validation
 
-Step Two (Overview)
+- Step Two (Overview)
 
-Products and prices validation
+- Products and prices validation
 
-Complete
+- Complete
 
-Order completion validation
+- Order completion validation
 
-Return to products page
+- Return to products page
 
-▶️ How to Run the Project
-Install dependencies
-npm install
+<h2>▶️ How to Run the Project</h2>
+- Install dependencies
+  - npm install
 
-Open Cypress Test Runner
-npx cypress open
+- Open Cypress Test Runner
+  - npx cypress open
 
-Run tests in headless mode
-npx cypress run
+- Run tests in headless mode
+ - npx cypress run
 
-📌 Notes
+<h2>📌 Notes</h2>
 
-Project focused on QA Automation best practices
+- Project focused on QA Automation best practices
 
-Clean and scalable architecture
+- Clean and scalable architecture
 
-Ready to be expanded with API tests or CI pipelines
+- Ready to be expanded with API tests or CI pipelines
 
-Suitable for QA Automation Engineer portfolio
+- Suitable for QA Automation Engineer portfolio
 
-👨‍💻 Author
+<h2>👨‍💻 Author</h2>
 
-Developed by Guilherme (Gui)
-QA Automation Engineer
+- Developed by Guilherme Campos
+- QA Automation Engineer
