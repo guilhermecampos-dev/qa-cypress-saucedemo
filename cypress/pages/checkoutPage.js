@@ -22,12 +22,23 @@ class CheckoutPage{
         cy.get('[data-test="continue"]').click()
     }
 
-    fillCheckoutForm(firstName, lastName, zipCode){
-        this.fillFirstName(firstName)
-        this.fillLastName(lastName)
-        this.fillZipCode(zipCode)
-        this.submit()
+   fillCheckoutForm({ firstName, lastName, zipCode }) {
+
+    if (firstName) {
+    this.fillFirstName(firstName)
     }
+
+    if (lastName) {
+    this.fillLastName(lastName)
+    }
+
+    if (zipCode) {
+    this.fillZipCode(zipCode)
+    }
+
+    this.submit()
+    }
+
 
     validateErrorMessage(message){
         cy.get('[data-test="error"]')
