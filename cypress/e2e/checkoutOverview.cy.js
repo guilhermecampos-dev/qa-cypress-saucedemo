@@ -19,9 +19,15 @@ describe('Checkout - Step Two (Overview)', ()=>{
         inventoryPage.addProductToCartByName('Sauce Labs Bike Light')
         
         cartPage.visit()
-        cy.get('[data-test="checkout"]').click()
+        cartPage.clickCheckout()
 
-        checkoutPage.fillCheckoutForm('John', 'Doe','12345')
+        checkoutPage.fillCheckoutForm({
+            firstName: 'John',
+            lastName: 'Doe',
+            zipCode:'12345'
+        })
+
+        overviewPage.validateOverviewPage()
     })
 
     it('should display checkout overview page',()=>{

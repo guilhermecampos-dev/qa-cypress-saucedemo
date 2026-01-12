@@ -14,7 +14,12 @@ beforeEach(()=>{
 
     inventoryPage.addProductToCartByName('Sauce Labs Backpack')
     cartPage.visit()
+    cartPage.validateCartPage()
+
+
     cartPage.clickCheckout()
+
+    checkoutPage.validateCheckoutPage()
 })
 
 it('should display checkout information page', ()=>{
@@ -22,8 +27,11 @@ it('should display checkout information page', ()=>{
 })
 
 it('should proceed to checkout overview with valid information', ()=>{
-    checkoutPage.fillCheckoutForm('John', 'Doe', '12345')
-
+    checkoutPage.fillCheckoutForm({
+    firstName:'John',
+    lastName: 'Doe', 
+    zipCode: '12345'
+})
     cy.url().should('include', 'checkout-step-two')
 })
 

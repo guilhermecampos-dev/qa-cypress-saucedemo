@@ -1,6 +1,6 @@
 class InventoryPage{
     validateInventoryPage(){
-        cy.get('.title')
+        cy.get('.title',{timeout: 10000})
             .should('be.visible')
             .and('have.text','Products')
     }
@@ -26,7 +26,9 @@ class InventoryPage{
     }
 
     selectSortOption(option){
-        cy.get('.product_sort_container').select(option)
+        cy.get('.product_sort_container')
+        .should('be.visible')
+        .select(option)
     }
 
     getProductPrices(){
@@ -86,6 +88,8 @@ class InventoryPage{
     }
 
     addProductToCartByName(productName){
+        cy.get('.inventory_item').should('exist')
+
         cy.contains('.inventory_item', productName)
         .find('button')
         .click()
@@ -96,12 +100,13 @@ class InventoryPage{
     }
 
     validateCartBadge(quantity){
-        if(quantity === '0'){
+        if(Number(quantity) === '0'){
             cy.get('.shopping_cart_badge').should('not.exist')
         }else{
             cy.get('.shopping_cart_badge')
             .should('be.visible')
-            .and('have.text', quantity)
+            .invoke('text')
+            .and('eq', quantity)
         }
     }    
 

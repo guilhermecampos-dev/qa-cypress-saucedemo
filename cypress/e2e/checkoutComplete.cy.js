@@ -24,12 +24,13 @@ describe('Checkout - Complete', ()=>{
         cartPage.visit()
         cartPage.clickCheckout()
 
-        checkoutPage.fillCheckoutForm(
-            'Gui',
-            'Tester',
-            '70000'
-        )
+        checkoutPage.fillCheckoutForm({
+            firstName: 'Gui',
+            lastName:'Tester',
+            zipCode: '70000'
+        })
 
+        overviewPage.validateOverviewPage()
         overviewPage.finishCheckout()
 
     })

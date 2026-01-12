@@ -36,15 +36,18 @@ class CheckoutOverviewPage{
         })
 
         this.getTax().invoke('text').then(text => {
-            tax=Number(text.replace('Tax:$',''))
+            tax=Number(text.replace('Tax: $',''))
         })
 
         this.getTotal().invoke('text').then(text =>{
-            total=Number(text.replace('Total:$',''))
+            total=Number(text.replace('Total: $',''))
+        })
+        .then(()=>{
+            expect(total).to.be.closeTo(itemTotal+tax,0.01)
         })
     }
 
     finishCheckout(){
-        cy.get('[data-test="finish"').click()
+        cy.get('[data-test="finish"]').click()
     }
     } export default CheckoutOverviewPage

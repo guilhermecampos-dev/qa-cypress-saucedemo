@@ -1,16 +1,17 @@
 class CartPage {
 
-    // Navega para a página do carrinho clicando no ícone
+    
     visit() {
-        cy.get('.shopping_cart_link').click()
+        cy.get('.shopping_cart_link')
+        .should('be.visible')
+        .click()
     }
 
-    // Retorna todos os itens do carrinho
+   
     getCartItems() {
         return cy.get('.cart_item')
     }
 
-    // Valida que a página do carrinho foi carregada corretamente
     validateCartPage() {
         cy.get('.title')
             .should('be.visible')
@@ -21,12 +22,10 @@ class CartPage {
         cy.get('[data-test="checkout"]').click()
     }
 
-    // Valida que existem produtos no carrinho
     validateProductsAreDisplayed() {
         this.getCartItems().should('have.length.greaterThan', 0)
     }
 
-    // Valida a estrutura de cada produto no carrinho
     validateProductStructure() {
         this.getCartItems().each(($item) => {
             cy.wrap($item).within(() => {
@@ -38,21 +37,23 @@ class CartPage {
         })
     }
 
-    // Remove produto pelo nome
     removeProductByName(productName) {
+        this.getCartItems().should('exist')
+
         cy.contains('.cart_item', productName)
           .find('button')
+          .should('be.visible')
           .click()
     }
 
-    // Valida o badge do carrinho (quantidade de itens)
     validateCartBadge(quantity){
-        if(quantity === '0'){
+        if(Number(quantity) === '0'){
             cy.get('.shopping_cart_badge').should('not.exist')
         }else{
             cy.get('.shopping_cart_badge')
             .should('be.visible')
-            .and('have.text', quantity)
+            .invoke('text')
+            .and('eq', quantity)
         }
     }   
 
