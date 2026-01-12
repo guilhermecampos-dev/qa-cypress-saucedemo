@@ -2,14 +2,17 @@
   "name": "cypress-saucedemo",
   "version": "1.0.0",
   "private": true,
-
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "test": "cypress run"
+    "cy:verify": "cypress verify",
+    "test": "npm run cy:verify && npm run cy:run",
+    "test:smoke": "cypress run --spec 'cypress/e2e/smoke/**/*.cy.js'",
+    "test:regression": "cypress run --spec 'cypress/e2e/regression/**/*.cy.js'",
+    "lint": "eslint cypress/**/*.js"
   },
-
   "devDependencies": {
-    "cypress": "^15.8.0"
+    "cypress": "^15.8.0",
+    "eslint": "^8.50.0"
   }
 }
