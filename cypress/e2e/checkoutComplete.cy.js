@@ -5,6 +5,7 @@ import CheckoutPage from "../pages/checkoutPage"
 import InventoryPage from "../pages/inventoryPage"
 
 
+
 describe('Checkout - Complete', ()=>{
 
     const inventoryPage = new InventoryPage()
@@ -21,7 +22,7 @@ describe('Checkout - Complete', ()=>{
         inventoryPage.addProductToCartByName('Sauce Labs Bike Light')
 
         cartPage.visit()
-        cy.get('[data-test="checkout"]').click()
+        cartPage.clickCheckout()
 
         checkoutPage.fillCheckoutForm(
             'Gui',
@@ -34,7 +35,7 @@ describe('Checkout - Complete', ()=>{
     })
 
     it('should complete checkout successfully',()=>{
-        completePage.validateCheckoutCompletePAge()
+        completePage.validateCheckoutCompletePage()
         completePage.validateSuccessMessage()
         completePage.validateSuccessDescription()
     })

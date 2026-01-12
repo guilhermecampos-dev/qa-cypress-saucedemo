@@ -14,14 +14,14 @@ beforeEach(()=>{
 
     inventoryPage.addProductToCartByName('Sauce Labs Backpack')
     cartPage.visit()
-    cy.get('[data-test="checkout"]').click()
+    cartPage.clickCheckout()
 })
 
 it('should display checkout information page', ()=>{
     checkoutPage.validateCheckoutPage()
 })
 
-it('should proced to checkout overview with valid information', ()=>{
+it('should proceed to checkout overview with valid information', ()=>{
     checkoutPage.fillCheckoutForm('John', 'Doe', '12345')
 
     cy.url().should('include', 'checkout-step-two')

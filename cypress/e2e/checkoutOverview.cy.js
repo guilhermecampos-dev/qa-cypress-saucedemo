@@ -2,6 +2,7 @@ import InventoryPage from '../pages/inventoryPage'
 import CartPage from '../pages/cartPage'
 import CheckoutPage from '../pages/checkoutPage'
 import CheckoutOverviewPage from '../pages/checkoutOverviewPage'
+import LoginPage from '../pages/loginPage'
 
 describe('Checkout - Step Two (Overview)', ()=>{
 
@@ -9,6 +10,7 @@ describe('Checkout - Step Two (Overview)', ()=>{
     const cartPage = new CartPage()
     const checkoutPage = new CheckoutPage()
     const overviewPage = new CheckoutOverviewPage()
+    const loginPage = new LoginPage()
 
     beforeEach(()=>{
         cy.login()

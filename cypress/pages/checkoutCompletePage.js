@@ -1,6 +1,6 @@
 class CheckoutCompletePage{
 
-    validateCheckoutCompletePAge(){
+    validateCheckoutCompletePage(){
         cy.get('.title')
         .should('be.visible')
         .and('have.text', 'Checkout: Complete!')

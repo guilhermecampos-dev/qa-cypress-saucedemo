@@ -17,6 +17,10 @@ class CartPage {
             .and('have.text', 'Your Cart')
     }
 
+    clickCheckout(){
+        cy.get('[data-test="checkout"]').click()
+    }
+
     // Valida que existem produtos no carrinho
     validateProductsAreDisplayed() {
         this.getCartItems().should('have.length.greaterThan', 0)

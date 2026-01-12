@@ -1,7 +1,6 @@
 import CartPage from '../pages/cartPage'
 import InventoryPage from '../pages/inventoryPage'
-import LoginPage from '../pages/LoginPage'
-
+import LoginPage from '../pages/loginPage'
 
 describe('Cart Page', () => {
 
@@ -9,9 +8,7 @@ describe('Cart Page', () => {
   const inventoryPage = new InventoryPage()
   const cartPage = new CartPage()
 
-
   beforeEach(() => {
-    
     cy.login()
   })
 
