@@ -1,126 +1,125 @@
-<h1> 🧪 Cypress E2E Automation – SauceDemo </h1>
 
-End-to-End test automation project built with Cypress, using the demo e-commerce application
-https://www.saucedemo.com
-.
+# 🧪 Cypress E2E Automation – SauceDemo
 
-The goal of this project is to validate the main purchase flow of an e-commerce, from login to checkout completion, applying best practices in test automation and Page Object Model (POM) architecture.
+End-to-End (E2E) test automation project built with **Cypress** for the SauceDemo web application.
 
-<h2> 🚀 Tech Stack </h2>
+This repository showcases **real-world QA automation practices**, focusing on clean architecture, test stability, and CI execution.  
+It was developed as a **professional portfolio project** aligned with international QA and SDET standards.
+
+---
+
+## 🚀 Tech Stack
 
 - Cypress
-
 - JavaScript
-
 - Node.js
-
 - Page Object Model (POM)
+- GitHub Actions (CI)
 
-<h2>📂 Project Structure</h2>
+---
 
-cypress/<br>
-├── e2e/<br>
-│   ├── loginPage.cy.js<br>
-│   ├── inventory.cy.js<br>
-│   ├── cart.cy.js<br>
-│   ├── checkout.cy.js<br>
-│   ├── checkoutError.cy.js<br>
-│   ├── checkoutOverview.cy.js<br>
-│   └── checkoutComplete.cy.js<br>
-│<br>
-├── pages/<br>
-│   ├── loginPage.js<br>
-│   ├── inventoryPage.js<br>
-│   ├── cartPage.js<br>
-│   ├── checkoutPage.js<br>
-│   ├── checkoutOverviewPage.js<br>
-│   └── checkoutCompletePage.js<br>
-│<br>
-├── support/<br>
-│   ├── commands.js<br>
-│   └── e2e.js<br>
-<br>
-<br>
-<h2>🧠 Design Pattern</h2>
+## 📂 Project Structure
+```text
+cypress/
+├── e2e/
+│   ├── loginPage.cy.js
+│   ├── inventory.cy.js
+│   ├── cart.cy.js
+│   ├── checkout.cy.js
+│   ├── checkoutError.cy.js
+│   ├── checkoutOverview.cy.js
+│   └── checkoutComplete.cy.js
+│
+├── pages/
+│   ├── loginPage.js
+│   ├── inventoryPage.js
+│   ├── cartPage.js
+│   ├── checkoutPage.js
+│   ├── checkoutOverviewPage.js
+│   └── checkoutCompletePage.js
+│
+└── support/
+    ├── commands.js
+    └── e2e.js
+   ``` 
+🧠 Design Pattern
+This project follows the Page Object Model (POM) design pattern to:
 
-This project uses Page Object Model (POM) to:
+Separate test logic from UI interaction logic
 
-- Separate test logic from UI interaction logic
+Improve readability and maintainability
 
-- Improve test readability
+Promote code reuse
 
-- Increase maintainability
+Support scalable test growth
 
-- Promote code reuse
+🧪 Test Coverage
+The automated test suite covers the main user flows of the application:
 
-<h2>🧪 Automated Test Scenarios</h2>
-<h3>🔐 Login</h3>
+🔐 Login
+Login with valid credentials
 
-- Login with valid credentials
+Error validation with invalid credentials
 
-- Error validation with invalid credentials
+📦 Inventory
+Inventory page validation
 
-<h3>📦 Inventory</h3>
+Product list and structure validation
 
-- Inventory page validation
+Sorting validation:
 
-- Product list validation
+Name (A → Z / Z → A)
 
-- Product structure validation
+Price (Low → High / High → Low)
 
-- Sorting validation:
+🛒 Cart
+Add products to cart
 
-  - Name (A → Z / Z → A)
+Validate cart badge quantity
 
-  - Price (Low → High / High → Low)
+Remove products from cart
 
-<h3>🛒 Cart</h3>
+Validate cart updates correctly
 
-- Add products to cart
+💳 Checkout
+Step One (user information)
 
-- Validate cart badge quantity
+Required fields validation
 
-- Remove products from cart
+Step Two (overview)
 
-- Validate cart updates correctly
+Product and price validation
 
-<h3>💳 Checkout</h3>
+Order completion
 
-- Step One (Your Information)
+Return to products page
 
-- Required fields validation
+All tests are executed end-to-end, simulating real user behavior.
 
-- Step Two (Overview)
+▶️ Running the Project
+Install dependencies
+npm ci
 
-- Products and prices validation
+Open Cypress Test Runner
+npm run cy:open
 
-- Complete
+Run tests in headless mode
+npm test
 
-- Order completion validation
+🔄 Continuous Integration
+This project uses GitHub Actions to automatically run all Cypress tests on:
 
-- Return to products page
+Push to main or develop
 
-<h2>▶️ How to Run the Project</h2>
-- Install dependencies
-  - npm install
+Pull requests
 
-- Open Cypress Test Runner
-  - npx cypress open
+CI configuration file:
 
-- Run tests in headless mode
- - npx cypress run
+.github/workflows/cypress.yml
 
-<h2>📌 Notes</h2>
+👨‍💻 Author
+Guilherme Campos
+QA Engineer | Cypress | E2E Automation
 
-- Project focused on QA Automation best practices
-
-- Clean and scalable architecture
-
-- Ready to be expanded with API tests or CI pipelines
-
-- Suitable for QA Automation Engineer portfolio
-
-<h2>👨‍💻 Author</h2>
-
-- Developed by Guilherme Campos
-- QA Automation Engineer
+GitHub:
+https://github.com/guilhermecampos-dev
