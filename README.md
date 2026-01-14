@@ -1,4 +1,3 @@
-
 # 🧪 Cypress E2E Automation – SauceDemo
 
 End-to-End (E2E) test automation project built with **Cypress** for the SauceDemo web application.
@@ -45,80 +44,83 @@ cypress/
 🧠 Design Pattern
 This project follows the Page Object Model (POM) design pattern to:
 
-Separate test logic from UI interaction logic
+- Separate test logic from UI interaction logic
 
-Improve readability and maintainability
+- Improve readability and maintainability
 
-Promote code reuse
+- Promote code reuse
 
-Support scalable test growth
+- Support scalable test growth
 
 🧪 Test Coverage
 The automated test suite covers the main user flows of the application:
 
 🔐 Login
-Login with valid credentials
+- Login with valid credentials
 
-Error validation with invalid credentials
+- Error validation with invalid credentials
 
 📦 Inventory
-Inventory page validation
+- Inventory page validation
 
-Product list and structure validation
+- Product list and structure validation
 
-Sorting validation:
+- Sorting validation:
 
-Name (A → Z / Z → A)
+- Name (A → Z / Z → A)
 
-Price (Low → High / High → Low)
+- Price (Low → High / High → Low)
 
 🛒 Cart
-Add products to cart
+- Add products to cart
 
-Validate cart badge quantity
+- Validate cart badge quantity
 
-Remove products from cart
+- Remove products from cart
 
-Validate cart updates correctly
+- Validate cart updates correctly
 
 💳 Checkout
-Step One (user information)
+- Step One (user information)
 
-Required fields validation
+- Required fields validation
 
-Step Two (overview)
+- Step Two (overview)
 
-Product and price validation
+- Product and price validation
 
-Order completion
+- Order completion
 
-Return to products page
+- Return to products page
 
 All tests are executed end-to-end, simulating real user behavior.
 
 ▶️ Running the Project
 Install dependencies
-npm ci
+- npm ci
 
 Open Cypress Test Runner
-npm run cy:open
+- npm run cy:open
 
 Run tests in headless mode
-npm test
+- npm test
 
 🔄 Continuous Integration
+
 This project uses GitHub Actions to automatically run all Cypress tests on:
 
-Push to main or develop
+- Push to main or develop
 
-Pull requests
+- Pull requests
 
-CI configuration file:
+- CI configuration file:
 
-.github/workflows/cypress.yml
+    - .github/workflows/cypress.yml
 
 👨‍💻 Author
+
 Guilherme Campos
+
 QA Engineer | Cypress | E2E Automation
 
 GitHub:
